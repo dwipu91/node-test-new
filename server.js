@@ -1,8 +1,9 @@
 import express from "express";
 import colors from "colors";
 import dotenv from "dotenv";
-import userRouter from "./router/userRouter.js";
 import mongodbConnection from "./config/mongbd.js";
+
+import allRouter from "./routes/index.js";
 
 // env config
 dotenv.config();
@@ -18,12 +19,13 @@ app.use(express.urlencoded({ extended: false }));
 // statcick folder
 app.use(express.static("public"));
 
-// app route
-app.use(userRouter);
+// use router
+app.use(allRouter);
 
 // server listen
 app.listen(PORT, () => {
   mongodbConnection();
+
   console.log(`server is ranning on port ${PORT}`.bgGreen);
 });
 

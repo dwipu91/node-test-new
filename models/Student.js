@@ -8,17 +8,23 @@ const StudentSchema = mongoose.Schema(
       trim: true,
       required: true,
     },
-    eamil: {
-      type: String,
-      trim: true,
-    },
     email: {
       type: String,
       trim: true,
     },
+    cell: {
+      type: String,
+      trim: true,
+      default: null,
+    },
+    photo: {
+      type: String,
+      default: null,
+    },
     age: {
       type: Number,
       trim: true,
+      default: null,
     },
     password: {
       type: String,
@@ -27,6 +33,7 @@ const StudentSchema = mongoose.Schema(
     userName: {
       type: String,
       trim: true,
+      default: null,
     },
     trash: {
       type: String,
