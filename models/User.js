@@ -24,6 +24,10 @@ const userSchema = mongoose.Schema(
       type: String,
       default: null,
     },
+    cell: {
+      type: String,
+      default: null,
+    },
     location: {
       type: String,
       trim: true,

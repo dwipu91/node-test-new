@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import mongodbConnection from "./config/mongbd.js";
 
 import allRouter from "./routes/index.js";
+import { errorHandler } from "./middlewares/errorHandler.js";
 
 // env config
 dotenv.config();
@@ -22,6 +23,8 @@ app.use(express.static("public"));
 // use router
 app.use(allRouter);
 
+//  error handler
+app.use(errorHandler);
 // server listen
 app.listen(PORT, () => {
   mongodbConnection();
